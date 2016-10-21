@@ -8,35 +8,33 @@ if(value =='start')
 	document.getElementById("ms").innerHTML ++ ;
 for($i = 1 ;$i<document.getElementById("ms").innerHTML; $i++)
 {
-if(document.getElementById("ms").innerHTML/1000 ==$i)
+if(document.getElementById("ms").innerHTML/100 ==$i)
 {	document.getElementById("sec").innerHTML ++
+document.getElementById("ms").innerHTML = 0
 } 
-if(document.getElementById("sec").innerHTML/60 ==1)
+if(document.getElementById("sec").innerHTML/60 ==$i)
 {
 document.getElementById("min").innerHTML ++
+document.getElementById("sec").innerHTML = 0
 }
 }
-},1)
-
+},10)
 }
 
 if(value =='lap')
 {    a = 0;
-	b = 0 ;
-	c= 0;
+	 b = 0 ;
+	 c= 0;
    
    		a =document.getElementById("min").innerHTML 
    		b =document.getElementById("sec").innerHTML 
 		c =document.getElementById("ms").innerHTML 
-	
-	 
-	 document.getElementById("second").innerHTML  += a +':'+ b +':' +c +'<br>'
 
-	
+	 document.getElementById("lap").innerHTML  += a +':'+ b +':' +c +'<br>'
 }
 
 if(value=='stop')
-{
+{	
  clearInterval(ok)
 	document.getElementById("ms").innerHTML = 0
 	document.getElementById("sec").innerHTML =0
@@ -46,16 +44,13 @@ if(value=='stop')
 }
 
 </script>
-
 <button  type =" button" onclick="sw('start')">start </button>
 <button type="button" onclick="sw('lap')"> lap </button>
 <button type="button" onclick="sw('stop')"> stop </button>
 
-<div id = "min"> 0</div>
-<div id = "sec"> 0</div>
-<div id ="ms"> 0</div>
+<div id = "min"> 00</div>
+<div id = "sec"> 00</div>
+<div id ="ms"> 00</div>
 
-<p id = "milli"> </p>
-<p id = "second"> </p>
-<p id = "minute"> </p>
+<p id = "lap"> </p>
 
